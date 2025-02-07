@@ -1,0 +1,231 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day Taniya</title>
+<style>
+    :root {
+        --primary-color: #007BFF;
+        --font-primary: 'Sacramento', sans-serif;
+        --font-secondary: Arial, sans-serif;
+    }
+
+    body {
+        font-family: var(--font-secondary);
+        background: url('https://res2.weblium.site/res/5e045d59f4de6d00233ec165/5e04aafb58095d002107cc28?nowebp') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        box-sizing: border-box;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        font-family: var(--font-primary);
+        font-size: 40px;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0);
+        position: relative;
+        z-index: 1000;
+    }
+
+    .header img {
+        height: 50px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .container {
+        margin-top: 05px;
+        text-align: center;
+    }
+
+    .header-text {
+        font-family: var(--font-primary);
+        font-size: 70px;
+        color: #000;
+        margin: 20px 10px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+        overflow-y: scroll; /* Enable vertical scrolling */
+        max-height: 100vh; /* Limit the height for scrolling */
+    }
+
+    .gallery-item {
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-item img
+    .gallery-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img
+    .gallery-item:hover video {
+        transform: scale(1.05);
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .desc {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #000;
+    }
+
+    @media screen and (max-width: 768px) {
+        .header {
+            font-size: 28px;
+        }
+
+        .header-text {
+            font-size: 50px;
+        }
+
+        .nav-links {
+            font-size: 14px;
+            gap: 15px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .header {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .header img {
+            margin-bottom: 10px;
+        }
+    }
+
+</style>
+</head>
+<body>
+<div class="header">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="cdr.jpg" alt="Your Logo">
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="lane.html">Memory Lane</a>
+        <a href="msgs">Messages</a>
+        <a href="admire">Admire</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="gallery">
+      <div class="gallery-item">
+        <video controls>
+            <source src="001.mp4" type="video/mp4">
+            <source src="your_video.webm" type="video/webm">`
+            <p>Your browser does not support the video tag.</p>
+        </video>
+        <div class="desc">Description of video 1</div>
+    </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="Birthday.mp4" type="video/mp4">
+                <source src="your_video.webm" type="video/webm">`
+                <p>Your browser does not support the video tag.</p>
+            </video>
+            <div class="desc">Description of video 1</div>
+        </div>
+        <div class="gallery-item">
+            <a target="_blank" href="00.jpg">
+                <img src="00.jpg" alt="Image 1">
+            </a>
+            <div class="desc">Description of image 1</div>
+        </div>
+
+        <div class="gallery-item">
+          <a target="_blank" href="0.jpg">
+              <img src="0.jpg" alt="Image 2">
+          </a>
+          <div class="desc">Description of image 2</div>
+      </div>
+
+        <div class="gallery-item">
+            <a target="_blank" href="1.jpg">
+                <img src="1.jpg" alt="Image 2">
+            </a>
+            <div class="desc">Description of image 2</div>
+        </div>
+
+        <div class="gallery-item">
+            <a target="_blank" href="2.jpg">
+                <img src="2.jpg" alt="Image 3">
+            </a>
+            <div class="desc">Description of image 3</div>
+        </div>
+
+        <div class="gallery-item">
+            <a target="_blank" href="3.jpg">
+                <img src="3.jpg" alt="Image 4">
+            </a>
+            <div class="desc">Description of image 4</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<title>Happy Valentine's Day Taniya</title>
+<style>
+    :root {
+        --product-header-height: auto;
+        --product-description-height: auto;
+        --product-content-top-padding: 20px;
+        --product-content-bottom-padding: 20px;
+        --product-header-bottom-margin: 20px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://res2.weblium.site/res/5e045d59f4de6d00233ec165/5e04aafb58095d002107cc28?nowebp') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    /* Fixed header styling */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Sacramento';
+        font-size: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+        color: #000000;
+        position: relative; /* Make the header fixed at the top */
+        z-index: 1000; /* Ensure header is always above other content */
+    }
+
+    /* Styling for the rest of the content */
+    .container {
+        margin-top: 120px; /* Adjusted margin to make room for the fixed header */
+        text-align: center;
+        position: relative;
+    }
+    .header-text {
+        font-family: 'Sacramento';
+        font-size: 60px;
+        text-align: center;
+        color: #000000;
+        margin: 20px 0;
+    }
+    .topics {
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+    .button-card {
+        background: #EBF3FB rgba(0, 0, 0, 0);
+        border: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        font-family: 'Sacramento';
+        font-size: 40px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    }
+    .button-card span {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Image styling */
+    #displayImage {
+        display: none; /* Initially hide the image */
+        width: 50%; /* Adjust the width of the image */
+        margin: 0 auto; /* Center the image */
+    }
+
+    /* Footer styling */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+    .nav-links a {
+    text-decoration: none;
+    color: #000; /* Adjust text color as needed */
+    font-weight: bold;
+    font-size: 18px; /* Adjust font size */
+    transition: color 0.3s ease;
+    }
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+</style>
+</head>
+<body>
+<!-- Header section with fixed position -->
+<div class="header">
+    <div style="display: flex; align-items: center; gap: 30px;">
+        <img src="cdr.jpg" alt="Your Logo" style="height: 50px;">
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="lane.html">Memory Lane</a>
+        <a href="/msgs">Messages</a>
+        <a href="/admire">Admire</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-text">
+        <h2>Will you be my Valentine:</h2>
+    </div>
+    <div class="topics">
+        <button class="button-card topics" onclick="selectTopic('YESSS')">
+            <span>YESSS</span>
+        </button>
+        <button class="button-card topics" id="noButton" onclick="handleNoClick()">
+            <span>NOOOOO</span>
+        </button>
+    </div>
+</div>
+
+<!-- Image that will be shown after "YESSS" click -->
+<img id="displayImage" src="" alt="Valentine's Image">
+
+<script>
+    let clickCount = 0;
+    const noButton = document.getElementById("noButton");
+    const displayImage = document.getElementById("displayImage");
+    const yayText = document.getElementById("yayText");
+
+    function handleNoClick() {
+        clickCount++;
+
+        // Move the button to a new position on each click
+        const randomTop = Math.random() * (window.innerHeight - noButton.offsetHeight); // Random position within screen height
+        const randomLeft = Math.random() * (window.innerWidth - noButton.offsetWidth); // Random position within screen width
+        
+        noButton.style.position = "absolute"; // Set button to absolute position
+        noButton.style.top = randomTop + "px"; // Set random vertical position
+        noButton.style.left = randomLeft + "px"; // Set random horizontal position
+
+        // Hide button after 5 clicks
+        if (clickCount === 5) {
+            noButton.style.display = "none";
+        }
+    }
+
+    function selectTopic(response) {
+        if (response === 'YESSS') {
+            // Hide all content except the background
+            //document.querySelector('.header').style.display = 'none';
+            document.querySelector('.container').style.display = 'none';
+
+            displayImage.src = "kiss.gif"; 
+            displayImage.style.display = "block"; // Show the image
+
+            // After 2 seconds, change the image to the second one
+            setTimeout(() => {
+                displayImage.src = "certificate.png"; 
+            }, 4000);
+        }
+    }
+</script>
+</body>
+</html>
