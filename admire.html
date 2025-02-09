@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<title>Happy Valentine's Day Taniya</title>
+<style>
+    :root {
+        --product-header-height: auto;
+        --product-description-height: auto;
+        --product-content-top-padding: 20px;
+        --product-content-bottom-padding: 20px;
+        --product-header-bottom-margin: 20px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://res2.weblium.site/res/5e045d59f4de6d00233ec165/5e04aafb58095d002107cc28?nowebp') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Sacramento';
+        font-size: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1); 
+        color: #000000;
+        position: relative; 
+        z-index: 1000;
+    }
+
+    .container {
+        margin-top: 0px; 
+        text-align: center;
+        position: relative;
+    }
+
+    .header-text {
+        font-family: 'Sacramento';
+        font-size: 60px;
+        text-align: center;
+        color: #000000;
+        margin: 20px 0;
+    }
+
+    .admire-messages {
+        font-family: 'Sacramento';
+        font-size: 40px;
+        color: #000000;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .message {
+        position: absolute; /* Important to place messages in random positions */
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px 30px;
+        margin: 10px;
+        border-radius: 20px;
+        font-size: 22px;
+        opacity: 1;
+        color: black;
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000; 
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #007BFF;
+    }
+
+</style>
+</head>
+<body>
+<div class="header">
+    <div style="display: flex; align-items: center; gap: 30px;">
+        <img src="cdr.png" alt="Your Logo" style="height: 50px;">
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="lane.html">Memory Lane</a>
+        <a href="msgs.html">Messages</a>
+        <a href="admire.html">Admire</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-text">
+        <h2>Admiring You, My Valentine</h2>
+    </div>
+
+    <!-- Admire Messages Section -->
+    <div class="admire-messages" id="admireMessages">
+        <!-- Admiration Messages will be inserted here -->
+    </div>
+</div>
+
+<script>
+    // List of 100 admiration messages
+    const messages = [
+        "You are the love of my life.",
+        "Every moment with you is a gift.",
+        "You make my heart smile.",
+        "Your smile brightens my day.",
+        "I feel so lucky to have you in my life.",
+        "You are my forever Valentine.",
+        "No one completes me like you do.",
+        "Your love is the best gift I could ever ask for.",
+        "I'm so grateful for you every day.",
+        "You are my sunshine on the darkest days.",
+        "You make everything better.",
+        "Your laughter is my favorite sound.",
+        "You make me feel special every single day.",
+        "I love your heart, your soul, and your smile.",
+        "You light up my world.",
+        "You complete me in every way.",
+        "I adore you more than words can say.",
+        "I am so thankful for your love.",
+        "You are my best friend and soulmate.",
+        "You're my favorite reason to smile.",
+        "You're more than I ever dreamed of.",
+        "I am completely in love with you.",
+        "With you, I am home.",
+        "You are my heart's desire.",
+        "I never want to be without you.",
+        "You are my dream come true.",
+        "I love being around you.",
+        "Your presence makes me feel safe and loved.",
+        "You are my happy place.",
+        "I'm the luckiest to have you by my side.",
+        "You fill my life with so much joy.",
+        "You make me feel understood and loved.",
+        "My heart beats for you and only you.",
+        "You are the reason I believe in love.",
+        "Your love makes me a better person.",
+        "I am so happy we found each other.",
+        "You make every day brighter.",
+        "You're the most beautiful person I know.",
+        "With you, I feel like the world is perfect.",
+        "You're my reason to wake up with a smile.",
+        "Being with you feels like a fairy tale.",
+        "You make my heart skip a beat.",
+        "You're the one I want to grow old with.",
+        "You are my forever and always.",
+        "I will always cherish you.",
+        "I love the way you love me.",
+        "You're my best part of every day.",
+        "You make me feel beautiful inside and out.",
+        "I’m so lucky to have you in my life.",
+        "You’re my first thought every morning.",
+        "Your love completes me in every way.",
+        "I’ll always love you more every day.",
+        "You make my heart soar.",
+        "Your love is everything to me.",
+        "You are the most precious person to me.",
+        "My love for you is endless.",
+        "I’m so proud to call you mine.",
+        "You are my one and only.",
+        "Your love is my greatest treasure.",
+        "You mean the world to me.",
+        "Every day with you is a blessing.",
+        "You fill my life with so much light.",
+        "I would never trade you for anything.",
+        "You're my home, my heart, my love.",
+        "You make me feel so special.",
+        "I can’t imagine my life without you.",
+        "You complete my life in every way.",
+        "You make every moment magical.",
+        "I feel safe and loved with you.",
+        "You are my forever Valentine.",
+        "I want to grow old with you.",
+        "You’re the best part of me.",
+        "You're my dream come true.",
+        "You make my world brighter every day.",
+        "I can’t wait to spend forever with you.",
+        "You are the greatest gift of my life.",
+        "With you, my heart feels complete.",
+        "You are my heart’s joy.",
+        "Every second with you is priceless.",
+        "You are my happy thought.",
+        "I love everything about you.",
+        "You're the sweetest person I know.",
+        "Being with you feels like a dream.",
+        "You have my heart forever.",
+        "You’re everything I’ve ever wanted.",
+        "You are my greatest adventure.",
+        "I can’t wait to see what the future holds with you.",
+        "You're the love of my life.",
+        "Every day with you is an adventure.",
+        "Your smile makes my heart race.",
+        "You’re my reason for being.",
+        "I love you more than words can express.",
+        "You make my heart full.",
+        "I can’t wait to spend the rest of my life with you.",
+        "You're the best thing that ever happened to me.",
+        "You're my perfect match.",
+        "Every time I see you, I fall in love all over again.",
+        "You are my everything.",
+        "I love you more with every passing day.",
+        "You're the greatest love I’ve ever known.",
+        "You are my heart’s home.",
+        "I will love you forever.",
+        "You are my reason to believe in true love.",
+        "I never want to let you go.",
+        "You are my one true love.",
+        "My heart belongs to you.",
+        "You are my soul’s other half.",
+        "With you, I’m whole.",
+        "I can’t imagine life without you.",
+        "You're my soulmate.",
+        "You make my life so much better.",
+        "You’re my heart’s desire.",
+        "You’re the one I’ve always dreamed of.",
+        "You complete me in every way.",
+        "I am so blessed to have you.",
+        "Your love is all I need.",
+        "I’m addicted to your love.",
+        "You make me feel loved every day.",
+        "You’re the love of my life.",
+        "I will always choose you.",
+        "You are my one and only.",
+        "You're my everything."
+    ];
+
+    const messagesContainer = document.getElementById("admireMessages");
+
+    let currentMessageIndex = 0;
+    const usedPositions = [];
+
+    // Function to display messages one by one at random positions
+    function displayMessages() {
+        if (currentMessageIndex < messages.length) {
+            let messageDiv = document.createElement("div");
+            messageDiv.classList.add("message");
+            messageDiv.textContent = messages[currentMessageIndex];
+
+            let randomX, randomY, collision;
+
+            // Generate a non-overlapping random position
+            do {
+                collision = false;
+                randomX = Math.random() * (window.innerWidth - 200);  // Ensure message fits within the screen
+                randomY = Math.random() * (window.innerHeight - 100);  // Ensure message fits within the screen
+
+                // Check for collision with existing positions
+                for (const position of usedPositions) {
+                    const distance = Math.sqrt(Math.pow(randomX - position.x, 2) + Math.pow(randomY - position.y, 2));
+                    if (distance < 100) { // If distance is too small (overlapping), retry
+                        collision = true;
+                        break;
+                    }
+                }
+            } while (collision);
+
+            // Store the position to prevent future overlap
+            usedPositions.push({ x: randomX, y: randomY });
+
+            // Apply the position to the message
+            messageDiv.style.left = `${randomX}px`;
+            messageDiv.style.top = `${randomY}px`;
+
+            // Add the message to the container
+            messagesContainer.appendChild(messageDiv);
+        
+            currentMessageIndex++;
+
+            // Show the next message after a 1-second delay
+            setTimeout(displayMessages, 1000); // 1 second delay
+        }
+    }
+
+    // Start displaying the messages after the page loads
+    window.onload = displayMessages;
+</script>
+</body>
+</html>
