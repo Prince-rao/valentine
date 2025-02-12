@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Letter</title>
+    <style>
+    :root {
+        --product-header-height: auto;
+        --product-description-height: auto;
+        --product-content-top-padding: 20px;
+        --product-content-bottom-padding: 20px;
+        --product-header-bottom-margin: 20px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://res2.weblium.site/res/5e045d59f4de6d00233ec165/5e04aafb58095d002107cc28?nowebp') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Sacramento';
+        font-size: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1); 
+        color: #000000;
+        position: relative; 
+        z-index: 1000; 
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000; 
+        font-weight: bold;
+        font-size: 18px; 
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #007BFF; 
+    }
+
+    .letter-container {
+        margin-top: 50px;
+        font-size: 40px;
+        font-family: 'Sacramento';
+        position: relative;
+    }
+
+    .letter-cover {
+        width: 80%;
+        height: 300px;
+        background-color: #f8f8f8;
+        margin: 0 auto;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .letter-cover .cover-text {
+        font-size: 48px;
+        font-family: 'Sacramento';
+        color: #333;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .letter-content {
+        display: none;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        max-width: 80%;
+        margin: 20px auto;
+        font-size: 22px;
+        line-height: 1.6;
+        font-weight: bold;
+    }
+
+    .typing {
+        color: #333;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <img src="cdr.png" alt="Your Logo" style="height: 50px;">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="story.html">Our Story</a>
+            <a href="lane.html">Memory Lane</a>
+            <a href="msgs.html">Letter</a>
+            <a href="admire.html">Admire</a>
+        </div>
+    </div>
+
+    <div class="letter-container">
+        <div class="letter-cover" id="letterCover">
+            <div class="cover-text">Open to read my love letter...</div>
+        </div>
+
+        <!-- The Letter Content (Hidden initially) -->
+        <div class="letter-content" id="letterContent">
+            <p id="story"></p>
+        </div>
+    </div>
+
+    <script>
+        const loveLetter = "My Love,<br><br>Happy Valentine’s Day!<br><br>I don’t even know where to begin because words will never do justice to how I feel about you. But let me try...<br><br>I love everything about you. I love the way you smell, that natural scent that feels like home. I could lose myself in that fragrance forever. I love your hands, so delicate, and the way they fit perfectly with mine. And your hair, especially right after a wash, when it falls so effortlessly and beautifully. It’s a sight I could never get tired of.<br><br>You’re the most beautiful person I’ve ever laid eyes on. Whether you’re wearing a saree, looking like a vision straight out of a dream, or rocking a suit with that elegance only you can pull off... or even when you’re in western outfits, looking effortlessly stunning, you leave me speechless every single time.<br><br>I adore the way you talk, that sweet and polite voice that feels like music to my ears. And then there’s your ‘kalesh’, your love for chaos and those playful fights over the smallest things. I’ve come to realize that’s your love language, your unique way of keeping us connected. It’s crazy, but I love your ‘kalesh’ just as much as I love you. I’ve accepted that you find joy in those silly arguments, and honestly, I wouldn’t want it any other way.<br><br>I know I mess up sometimes. I know I don’t always understand what you need me to say or do, but believe me, I’m trying. I’m learning every day, and I promise I’ll keep trying because you’re worth every effort. I want to be the man who understands you, who knows exactly what to say to make you smile, who learns to handle your ‘kalesh’ with love and patience.<br><br>You are the one I want to grow with, to learn with, to spend every single day with. You make my life beautiful, and I can’t imagine it without you.<br><br>Happy Valentine’s Day, my love. I am so incredibly lucky to have you, and I love you more than words can ever express.<br><br>Forever yours,<br>Bubu";
+
+        const loveLetterWords = loveLetter.split(' ');
+
+        let wordIndex = 0; 
+        let currentText = "";
+
+        function printWord() {
+            if (wordIndex < loveLetterWords.length) {
+                currentText += loveLetterWords[wordIndex] + " "; 
+                document.getElementById("story").innerHTML = `<span class="typing">${currentText}</span>`;
+                wordIndex++;
+                setTimeout(printWord, 150); 
+            }
+        }
+
+        document.getElementById("letterCover").addEventListener("click", function() {
+            this.style.display = 'none'; // Hide the letter cover
+            document.getElementById("letterContent").style.display = 'block'; // Show the letter content
+            printWord(); // Start typing effect
+        });
+    </script>
+</body>
+</html>
