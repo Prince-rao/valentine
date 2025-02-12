@@ -24,7 +24,6 @@
         position: relative;
     }
 
-    /* Fixed header styling */
     .header {
         display: flex;
         justify-content: space-between;
@@ -34,12 +33,12 @@
         padding: 30px;
         background-color: rgba(255, 255, 255, 0.1); 
         color: #000000;
-        position: relative;
+        position: relative; 
         z-index: 1000;
     }
 
     .container {
-        margin-top: 120px;
+        margin-top: 120px; 
         text-align: center;
         position: relative;
     }
@@ -77,10 +76,9 @@
         margin-top: 10px;
     }
 
-    /* Image styling */
     #displayImage {
         display: none; 
-        width: 50%;
+        width: 50%; 
         margin: 0 auto; 
     }
 
@@ -89,7 +87,7 @@
         bottom: 0;
         width: 100%;
         height: 50px;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0); 
     }
     
     .nav-links {
@@ -100,7 +98,7 @@
     text-decoration: none;
     color: #000; 
     font-weight: bold;
-    font-size: 18px; 
+    font-size: 18px;
     transition: color 0.3s ease;
     }
 
@@ -113,14 +111,14 @@
 <body>
 <div class="header">
     <div style="display: flex; align-items: center; gap: 30px;">
-        <img src="cdr.jpg" alt="Your Logo" style="height: 50px;">
+        <img src="cdr.png" alt="Your Logo" style="height: 50px;">
     </div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="story.html">Our Story</a>
         <a href="lane.html">Memory Lane</a>
-        <a href="/msgs">Messages</a>
-        <a href="/admire">Admire</a>
+        <a href="msgs.html">Letter</a>
+        <a href="admire.html">Admire</a>
     </div>
 </div>
 
@@ -137,6 +135,7 @@
         </button>
     </div>
 </div>
+
 
 <img id="displayImage" src="" alt="Valentine's Image">
 
@@ -166,7 +165,7 @@
             document.querySelector('.container').style.display = 'none';
 
             displayImage.src = "kiss.gif"; 
-            displayImage.style.display = "block"; 
+            displayImage.style.display = "block";
 
             setTimeout(() => {
                 displayImage.src = "certificate.png"; 
